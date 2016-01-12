@@ -3,8 +3,6 @@ package fantasy;
 
 import java.util.ArrayList;
 
-
-
 public class Character {
 	String name;
 	int health;
