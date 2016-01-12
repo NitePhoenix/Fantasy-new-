@@ -3,44 +3,36 @@ package fantasy;
 import java.util.ArrayList;
 
 class Castle {
-
 	ArrayList<Room> rooms;
 	
-	Castle()
-	{
+	Castle(){
 		rooms = new ArrayList<Room>();
 	}
 	
 	/**
-	 * Adds a DarkRoom, HauntedRoom, or MagicRoom to the Castle level.
-	 * @param DkRoom.
-	 * @param HdRoom.
-	 * @param McRoom.
+	 * Adds a Room to the Castle level
+	 * @param room the Room
 	 */
-	void addRoom(Room room)
-	{
+	void addRoom(Room room){
 		rooms.add(room);
 	}
 	
 	/**
-	 * Occurs when an Elf enters a DarkRoom, HauntedRoom, or MagicRoom
-	 * @param elf The Elf.
-	 * @param darkroom The DarkRoom, hauntedroom The HauntedRoom, and magicroom The MagicRoom.
+	 * Occurs when a Character enters Room
+	 * @param character The Character
+	 * @param room The Room
 	 */
-	void enterRoom(Character character, Room room)
-	{
+	void enterRoom(Character character, Room room){
 		System.out.println(character.getName() + " enters the " + room.getName() );
 		room.enter(character);
-		
 	}
 	
 	/**
-	 * Occurs when an Elf leaves a DarkRoom, HauntedRoom, or MagicRoom.
-	 * @param elf The Elf.
-	 * @param darkroom The DarkRoom, hauntedroom The HauntedRoom, and magicroom The MagicRoom.
+	 * Occurs when a Character leaves a Room
+	 * @param character The Character
+	 * @param room The Room
 	 */
-	void exitRoom(Character character, Room room)
-	{
+	void exitRoom(Character character, Room room){
 		room.exit(character);
 		
 		System.out.println(character.getName() + " leaves the " + room.getName() );
@@ -48,21 +40,20 @@ class Castle {
 	}
 	
 	/**
-	 * Returns the number of DarkRooms, HauntedRooms, and MagicRooms.
-	 * @return The number of DarkRooms, HauntedRooms, or MagicRooms.
+	 * Returns the number of Rooms
+	 * @return The number of Rooms
 	 */
-
-	int getRoomCount()
-	{
+	int getRoomCount(){
 		return rooms.size();
 	}
 	
 	/**
-	 * Returns a DarkRoom, HauntedRoom, and MagicRoom according to index.
+	 * Returns a Room according to index.
 	 * @param index
-	 * @return
+	 * @return 
 	 */
-	Room getRoom(int index) {
+	Room getRoom(int index){
 		return rooms.get(index);
 	}
+	
 }
