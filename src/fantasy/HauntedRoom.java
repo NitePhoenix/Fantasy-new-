@@ -8,6 +8,8 @@ import java.util.ArrayList;
 class HauntedRoom extends Room{
 	boolean ghosts;
 	
+	ArrayList<Character> characters;
+	
 	/**
 	 * Constructs a HauntedRoom
 	 * @param name The name of the room.
@@ -19,15 +21,17 @@ class HauntedRoom extends Room{
 	{
 		super(name, gold, radioactive);
 		this.ghosts = ghosts;
+		characters = new ArrayList<Character>();
 	}
 	
-	
-	void enter(Elf elf)
-	{
-		super.enter(elf);
+	void enter(Character character){
+		
+		if (radioactive)
+			character.exposeToRadiation();
+		gold = character.takeGold(gold);
 		if (ghosts)
 		{
-			elf.findGhost();
+			character.findGhost();
 		}
 	}
 }

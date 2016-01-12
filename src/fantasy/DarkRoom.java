@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 class DarkRoom extends Room{
 	
-	ArrayList<Elf> elves;
+	ArrayList<Character> characters;
 	
 	/**
 	 * Constructs a DarkRoom
@@ -20,5 +20,16 @@ class DarkRoom extends Room{
 	DarkRoom(String name, int gold, boolean radioactive)
 	{
 		super(name, gold, radioactive);
+		characters = new ArrayList<Character>();
 	}
+	
+//	void enter(Character character){
+//		if (radioactive)
+//			character.exposeToRadiation();
+//		
+//		gold = character.takeGold(gold);
+//	}
+//	void exit(Character character){
+//		characters.remove(character);
+//	}
 }

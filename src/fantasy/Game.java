@@ -21,38 +21,15 @@ public class Game {
 		Ogre ogre = new Ogre("Pat");
 		Wizard wizard = new Wizard("Draco");
 		
-		for (int i=0; i<castle.getDarkRoomCount(); i++)
+		for (int i=0; i<castle.getRoomCount(); i++)
 		{
-			DarkRoom darkroom = castle.getDarkRoom(i);
-			castle.enterRoom(elf, darkroom);
-			castle.exitRoom(elf, darkroom);
-			castle.enterRoom(ogre, darkroom);
-			castle.exitRoom(ogre, darkroom);
-			castle.enterRoom(wizard, darkroom);
-			castle.exitRoom(wizard, darkroom);
-		}
-		
-		for (int i=0; i<castle.getHauntedRoomCount(); i++)
-		{
-			HauntedRoom hauntedroom = castle.getHauntedRoom(i);
-			castle.enterRoom(elf, hauntedroom);
-			castle.exitRoom(elf, hauntedroom);
-			castle.enterRoom(ogre, hauntedroom);
-			castle.exitRoom(ogre, hauntedroom);
-			castle.enterRoom(wizard, hauntedroom);
-			castle.exitRoom(wizard, hauntedroom);
-		}
-		
-		for (int i=0; i<castle.getMagicRoomCount(); i++)
-		{
-			MagicRoom magicroom = castle.getMagicRoom(i);
-			castle.enterRoom(elf, magicroom);
-			castle.exitRoom(elf, magicroom);
-			castle.enterRoom(ogre, magicroom);
-			castle.exitRoom(ogre, magicroom);
-			castle.enterRoom(wizard, magicroom);
-			castle.exitRoom(wizard, magicroom);
-			
+			Room room = castle.getRoom(i);
+			castle.enterRoom(elf, room);
+			castle.exitRoom(elf, room);
+			castle.enterRoom(ogre, room);
+			castle.exitRoom(ogre, room);
+			castle.enterRoom(wizard, room);
+			castle.exitRoom(wizard, room);
 		}
 	}
 
@@ -68,7 +45,7 @@ public class Game {
 		darkroom = new DarkRoom("kitchen", 100, false);
 		castle.addRoom(darkroom);
 		
-		darkroom = new DarkRoom("living room", 0, true);
+		darkroom = new DarkRoom("living room", 90, true);
 		castle.addRoom(darkroom);
 	}
 	
@@ -77,7 +54,7 @@ public class Game {
 		HauntedRoom hauntedroom = new HauntedRoom("dungeon", 150, true, true);
 		castle.addRoom(hauntedroom);
 		
-		hauntedroom = new HauntedRoom("garage", 25, false, false);
+		hauntedroom = new HauntedRoom("garage", 250, false, false);
 		castle.addRoom(hauntedroom);
 		
 		hauntedroom = new HauntedRoom("storage closet", 500, true, true);
@@ -89,7 +66,7 @@ public class Game {
 		MagicRoom magicroom = new MagicRoom("bedroom", 75, true, true);
 		castle.addRoom(magicroom);
 		
-		magicroom = new MagicRoom("bathroom", 25, false, false);
+		magicroom = new MagicRoom("bathroom", 125, false, false);
 		castle.addRoom(magicroom);
 	}
 }

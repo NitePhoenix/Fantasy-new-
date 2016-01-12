@@ -1,40 +1,36 @@
 //Chen, Susan
 package fantasy;
 
-public class CharacterInheritance {
+import java.util.ArrayList;
+
+
+
+public class Character {
 	String name;
 	int health;
+	int gold;
 	
 	/**
 	 * Drinking potion restores health.
 	 */
-	void drinkPotion(Elf elf){		
-		health = 100;
-		System.out.println(getName() + " drinks potion. Health = " + health + "%");
-	}
-	void drinkPotion(Ogre Ogre){		
-		health = health+0;
-		System.out.println(getName() + " drinks potion. Health = " + health + "%");
-	}
-	void drinkPotion(Wizard wizard){		
-		health = health*2;
-		System.out.println(getName() + " drinks potion. Health = " + health + "%");
+	void drinkPotion()
+	{	
 	}
 	
 	/**
 	 * Reduce the health by x%.
 	 */
-	void exposeToRadiation(Elf elf){
-		health = (int)(health * 0.9);
-		System.out.println(getName() + " is exposed to radiation. Health = " + health + "%");
+	void exposeToRadiation()
+	{
 	}
-	void exposeToRadiation(Ogre ogre){
-		health = (int)(health * 0.95);
-		System.out.println(getName() + " is exposed to radiation. Health = " + health + "%");
+	
+	void findGhost()
+	{
 	}
-	void exposeToRadiation(Wizard wizard){
-		health = (int)(health * 0.75);
-		System.out.println(getName() + " is exposed to radiation. Health = " + health + "%");
+	
+	int takeGold(int available)
+	{
+		return available;
 	}
 	
 	/**

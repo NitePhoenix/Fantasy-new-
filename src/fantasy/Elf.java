@@ -5,10 +5,7 @@ package fantasy;
  * Modified by Leo Hon
  *
  */
-class Elf extends CharacterInheritance{
-//	String name;
-//	int health;
-	int gold;
+class Elf extends Character{
 	final static int maxGold = 8;
 	
 	Elf(String name)
@@ -16,6 +13,16 @@ class Elf extends CharacterInheritance{
 		this.name = name;
 		health = 100;
 		gold = 0;
+	}
+	
+	void drinkPotion(){		
+		health = 100;
+		System.out.println(getName() + " drinks potion. Health = " + health + "%");
+	}
+	
+	void exposeToRadiation(){
+		health = (int)(health * 0.9);
+		System.out.println(getName() + " is exposed to radiation. Health = " + health + "%");
 	}
 	
 	/**
@@ -37,30 +44,10 @@ class Elf extends CharacterInheritance{
 			taken = available - maxGold;
 		}
 		
-		System.out.println(getName() + " takes " + taken + " gold. Gold=" + gold + " bars");
+		System.out.println(getName() + " takes " + gold + " gold. Gold=" + gold + " bars");
 		
-		return available - taken;
+		return taken;
 	}
-	
-//	/**
-//	 * Drinking potion restores health.
-//	 */
-//	void drinkPotion()
-//	{
-//		health = 100;
-//		
-//		System.out.println(getName() + " drinks potion. Health=" + health + "%");
-//	}
-//	
-//	/**
-//	 * Reduce the health by 10%.
-//	 */
-//	void exposeToRadiation()
-//	{
-//		health = (int)(health * 0.9);
-//		
-//		System.out.println(getName() + " is exposed to radiation. Health=" + health + "%");
-//	}
 	
 	/**
 	 * Ghost encounter loses all gold

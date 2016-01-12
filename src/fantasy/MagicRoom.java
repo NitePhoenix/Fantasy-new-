@@ -7,8 +7,7 @@ import java.util.ArrayList;
 class MagicRoom extends Room{
 	boolean potion;
 	
-	ArrayList<Elf> elves;
-	
+	ArrayList<Character> characters;
 	/**
 	 * Constructs a MagicRoom
 	 * @param name The name of the room.
@@ -20,14 +19,20 @@ class MagicRoom extends Room{
 	{
 		super(name, gold, radioactive);
 		this.potion = potion;
+		characters = new ArrayList<Character>();
 	}
 	
-	void enter(Elf elf)
-	{
-		super.enter(elf);
+	void enter(Character character){
+		
+		if (radioactive)
+			character.exposeToRadiation();
+		gold = character.takeGold(gold);
 		if (potion)
 		{
-			elf.drinkPotion(elf);
+			character.drinkPotion();
 		}
 	}
+//	void exit(Character character){
+//		characters.remove(character);
+//	}
 }

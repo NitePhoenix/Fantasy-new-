@@ -5,10 +5,7 @@ package fantasy;
  * Modified by Leo Hon
  *
  */
-class Ogre extends CharacterInheritance{
-//	String name;
-//	int health;
-	int gold;
+class Ogre extends Character{
 	final static int maxGold = 0;
 	
 	Ogre(String name)
@@ -18,6 +15,15 @@ class Ogre extends CharacterInheritance{
 		gold = 0;
 	}
 	
+	void drinkPotion(){		
+		health = health+0;
+		System.out.println(getName() + " drinks potion. Health = " + health + "%");
+	}
+	
+	void exposeToRadiation(){
+		health = (int)(health * 0.95);
+		System.out.println(getName() + " is exposed to radiation. Health = " + health + "%");
+	}
 	/**
 	 * Takes the maximum amount of gold and returns the leftover amount.
 	 * @param available The amount of gold available to be taken.
@@ -37,34 +43,21 @@ class Ogre extends CharacterInheritance{
 			taken = available - maxGold;
 		}
 		
-		System.out.println(getName() + " takes " + taken + " gold. Gold=" + gold + " bars");
+		System.out.println(getName() + " takes " + gold + " gold. Gold=" + gold + " bars");
 		
-		return available - taken;
+		return taken;
 	}
 	
-//	/**
-//	 * Drinking potion restores health.
-//	 */
-//	void drinkPotion()
-//	{
-//		System.out.println(getName() + " drinks potion. Health=" + health + "%");
-//	}
-//	
-//	/**
-//	 * Reduce the health by 10%.
-//	 */
-//	void exposeToRadiation()
-//	{
-//		health = (int)(health * 0.9);
-//		
-//		System.out.println(getName() + " is exposed to radiation. Health=" + health + "%");
-//	}
+	void findGhost()
+	{
+		System.out.println(getName() + " encounters ghosts. Gold=" + gold + " bars");
+	}
 	
 	/**
-	 * A description of this Elf.
+	 * A description of this ogre.
 	 * @return
 	 */
 	String getName() {
-		return "Orge " + name;
+		return "Ogre " + name;
 	}
 }

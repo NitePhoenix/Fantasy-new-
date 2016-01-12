@@ -7,65 +7,29 @@ public class Room {
 	int gold;
 	boolean radioactive;
 	
-	ArrayList<Elf> elves;
-	ArrayList<Ogre> ogres;
-	ArrayList<Wizard> wizards;
+	ArrayList<Character> characters;
 	
 	Room(String name, int gold, boolean radioactive)
 	{
 		this.name = name;
 		this.gold = gold;
 		this.radioactive = radioactive;
-		
-		elves = new ArrayList<Elf>();
-		ogres = new ArrayList<Ogre>();
-		wizards = new ArrayList<Wizard>();
+		characters = new ArrayList<Character>();
 	}
 	
-	void enter(Elf elf){
-		elves.add(elf);
+	void enter(Character character){
+		characters.add(character);
 		
 		if (radioactive)
-			elf.exposeToRadiation(elf);
+			character.exposeToRadiation();
 		
-		gold = elf.takeGold(gold);
+		gold = character.takeGold(gold);
 	}
-	void exit(Elf elf){
-		elves.remove(elf);
-	}
-	
-	void enter(Ogre ogre)
-	{
-		ogres.add(ogre);
-		
-		if (radioactive)
-			ogre.exposeToRadiation(ogre);
-		
-		gold = ogre.takeGold(gold);
-	}
-	void exit(Ogre ogre){
-		elves.remove(ogre);
-	}
-	
-	void enter(Wizard wizard)
-	{
-		wizards.add(wizard);
-		
-		if (radioactive)
-			wizard.exposeToRadiation(wizard);
-		
-		gold = wizard.takeGold(gold);
-	}
-	void exit(Wizard wizard){
-		elves.remove(wizard);
+	void exit(Character character){
+		characters.remove(character);
 	}
 	
 	String getName(){
 		return name;
-	}
-	
-	int getNumOfGold()
-	{
-		return gold;
 	}
 }
