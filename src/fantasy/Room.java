@@ -2,15 +2,18 @@ package fantasy;
 
 import java.util.ArrayList;
 
+/**
+ * This class is inherited by different types of rooms
+ * Modified by Leo Hon and Susan Chen
+ */
+
 public class Room {
 	String name;
 	int gold;
 	boolean radioactive;
-	
 	ArrayList<Character> characters;
 	
-	Room(String name, int gold, boolean radioactive)
-	{
+	Room(String name, int gold, boolean radioactive){
 		this.name = name;
 		this.gold = gold;
 		this.radioactive = radioactive;
@@ -25,6 +28,7 @@ public class Room {
 		
 		gold = character.takeGold(gold);
 	}
+	
 	void exit(Character character){
 		characters.remove(character);
 	}
@@ -32,4 +36,5 @@ public class Room {
 	String getName(){
 		return name;
 	}
+
 }

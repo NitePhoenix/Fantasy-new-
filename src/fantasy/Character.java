@@ -1,7 +1,9 @@
-//Chen, Susan
 package fantasy;
 
-import java.util.ArrayList;
+/**
+ * This class is inherited by different types of characters
+ * Modified by Leo Hon and Susan Chen
+ */
 
 public class Character {
 	String name;
@@ -9,31 +11,33 @@ public class Character {
 	int gold;
 	
 	/**
-	 * Drinking potion restores health.
+	 * Drinking potion restores health
 	 */
-	void drinkPotion()
-	{	
+	void drinkPotion(){	
 	}
 	
 	/**
-	 * Reduce the health by x%.
+	 * Reduce the health by x%
 	 */
-	void exposeToRadiation()
-	{
-	}
-	
-	void findGhost()
-	{
-	}
-	
-	int takeGold(int available)
-	{
-		return available;
+	void exposeToRadiation(){
 	}
 	
 	/**
-	 * The name of the character.
-	 * @return
+	 * Encountering a ghost
+	 */
+	void findGhost(){
+	}
+	
+	/**
+	 * Takes an amount of gold
+	 * @param available (the amount of gold available to be taken)
+	 */
+	int takeGold(int available){
+	}
+	
+	/**
+	 * The name of the character
+	 * @return name
 	 */
 	String getName(){
 		return name;

@@ -1,38 +1,38 @@
 package fantasy;
+
 import java.util.ArrayList;
 
 /**
+ * MagicRooms have certain properties that Characters can interact with
  * Modified by Leo Hon
  */
-class MagicRoom extends Room{
+
+class MagicRoom extends Room {
 	boolean potion;
-	
 	ArrayList<Character> characters;
+	
 	/**
 	 * Constructs a MagicRoom
-	 * @param name The name of the room.
-	 * @param gold The amount of the gold.
-	 * @param radioactive If radioactivity is present
-	 * @param potion If potion is present
+	 * @param name (the name of the room)
+	 * @param gold (the amount of the gold)
+	 * @param radioactive (if radioactivity is present)
+	 * @param potion (if a potion is present)
 	 */
-	MagicRoom(String name, int gold, boolean radioactive, boolean potion)
-	{
+	MagicRoom(String name, int gold, boolean radioactive, boolean potion){
 		super(name, gold, radioactive);
 		this.potion = potion;
 		characters = new ArrayList<Character>();
 	}
 	
 	void enter(Character character){
-		
 		if (radioactive)
 			character.exposeToRadiation();
+		
 		gold = character.takeGold(gold);
-		if (potion)
-		{
+		
+		if (potion){
 			character.drinkPotion();
 		}
 	}
-//	void exit(Character character){
-//		characters.remove(character);
-//	}
+
 }

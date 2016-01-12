@@ -1,17 +1,16 @@
 package fantasy;
 
 /**
- * This class is responsible for constructing levels and coordinating interaction of
- * Elves with Darkrooms.
- * Modified by Leo Hon
- *
+ * This class is responsible for constructing levels and coordinating interaction of Charcacters with Rooms
+ * Modified by Leo Hon and Susan Chen
  */
+
 public class Game {
 
 	/**
-	 * Initiates the start of game play.
+	 * Initiates the start of game play
 	 */
-	void play() {
+	void play(){
 		Castle castle = new Castle();
 		createLevel1(castle);
 		createLevel2(castle);
@@ -21,8 +20,7 @@ public class Game {
 		Ogre ogre = new Ogre("Pat");
 		Wizard wizard = new Wizard("Draco");
 		
-		for (int i=0; i<castle.getRoomCount(); i++)
-		{
+		for (int i=0; i<castle.getRoomCount(); i++){
 			Room room = castle.getRoom(i);
 			castle.enterRoom(elf, room);
 			castle.exitRoom(elf, room);
@@ -34,11 +32,10 @@ public class Game {
 	}
 
 	/**
-	 * Constructs 3 levels of the game for the characters.
+	 * Constructs 3 levels of the game, with a number of rooms, for the characters
 	 * @param castle
 	 */
-	void createLevel1(Castle castle)
-	{
+	void createLevel1(Castle castle){
 		DarkRoom darkroom = new DarkRoom("foyer", 50, true);
 		castle.addRoom(darkroom);
 		
@@ -49,8 +46,7 @@ public class Game {
 		castle.addRoom(darkroom);
 	}
 	
-	void createLevel2(Castle castle)
-    {
+	void createLevel2(Castle castle){
 		HauntedRoom hauntedroom = new HauntedRoom("dungeon", 150, true, true);
 		castle.addRoom(hauntedroom);
 		
@@ -61,12 +57,12 @@ public class Game {
 		castle.addRoom(hauntedroom);
     }
 	
-	void createLevel3(Castle castle)
-	{
+	void createLevel3(Castle castle){
 		MagicRoom magicroom = new MagicRoom("bedroom", 75, true, true);
 		castle.addRoom(magicroom);
 		
 		magicroom = new MagicRoom("bathroom", 125, false, false);
 		castle.addRoom(magicroom);
 	}
+
 }

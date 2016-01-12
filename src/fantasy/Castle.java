@@ -11,7 +11,7 @@ class Castle {
 	
 	/**
 	 * Adds a Room to the Castle level
-	 * @param room the Room
+	 * @param room (the Room)
 	 */
 	void addRoom(Room room){
 		rooms.add(room);
@@ -19,23 +19,23 @@ class Castle {
 	
 	/**
 	 * Occurs when a Character enters Room
-	 * @param character The Character
-	 * @param room The Room
+	 * @param character (the Character)
+	 * @param room (the Room)
 	 */
 	void enterRoom(Character character, Room room){
-		System.out.println(character.getName() + " enters the " + room.getName() );
+		System.out.println(character.getName() + " enters the " + room.getName());
 		room.enter(character);
 	}
 	
 	/**
 	 * Occurs when a Character leaves a Room
-	 * @param character The Character
-	 * @param room The Room
+	 * @param character (the Character)
+	 * @param room (the Room)
 	 */
 	void exitRoom(Character character, Room room){
 		room.exit(character);
 		
-		System.out.println(character.getName() + " leaves the " + room.getName() );
+		System.out.println(character.getName() + " leaves the " + room.getName());
 		System.out.println();
 	}
 	
@@ -48,12 +48,12 @@ class Castle {
 	}
 	
 	/**
-	 * Returns a Room according to index.
+	 * Returns a Room according to index
 	 * @param index
 	 * @return 
 	 */
 	Room getRoom(int index){
 		return rooms.get(index);
 	}
-	
+
 }
