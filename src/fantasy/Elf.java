@@ -2,11 +2,12 @@ package fantasy;
 
 /**
  * This class represents one character of the game
- * Modified by Leo Hon and Susan Chen
+ * @author S. Camilleri
+ * Modified by Susan Chen
  */
 
 class Elf extends Character {
-	final static int maxGold = 8;
+	private final static int maxGold = 8;
 	
 	/**
 	 * Constructs an Elf
@@ -21,17 +22,21 @@ class Elf extends Character {
 	/**
 	 * Drinking potion restores health
 	 */
-	void drinkPotion(){		
+	public void drinkPotion(){		
 		health = 100;
-		System.out.println(getName() + " drinks potion. Health = " + health + "%");
+		System.out.println(getName() + " drinks potion.\n" +
+				"\tHealth restored.\n" +
+				"\tHealth = " + health + "%.");
 	}
 	
 	/**
 	 * Reduce the health by x%
 	 */
-	void exposeToRadiation(){
+	public void exposeToRadiation(){
 		health = (int)(health * 0.9);
-		System.out.println(getName() + " is exposed to radiation. Health = " + health + "%");
+		System.out.println(getName() + " is exposed to radiation.\n" +
+				"\tHealth lost.\n" +
+				"\tHealth = " + health + "%.");
 	}
 	
 	/**
@@ -39,7 +44,7 @@ class Elf extends Character {
 	 * @param available (the amount of gold available to be taken)
 	 * @return the amount of gold leftover
 	 */
-	int takeGold(int available){
+	public int takeGold(int available){
 		int taken = 0;
 		if (available + gold <= maxGold){
 			gold += available;
@@ -50,24 +55,27 @@ class Elf extends Character {
 			taken = available - maxGold;
 		}
 		
-		System.out.println(getName() + " takes " + gold + " gold. Gold=" + gold + " bars");
+		System.out.println(getName() + " takes " + gold + " gold.\n" +
+				"\tGold = " + gold + " bars.");
 		return taken;
 	}
 	
 	/**
 	 * Ghost encounter loses all gold
 	 */
-	void findGhost(){
+	public void findGhost(){
 		gold = 0;
 		
-		System.out.println(getName() + " encounters ghosts. Gold=" + gold + " bars");
+		System.out.println(getName() + " encounters ghosts.\n" +
+				"\t" + getName() + " is scared! All gold dropped.\n" +
+				"\tGold = " + gold + " bars.");
 	}
 
 	/**
 	 * A description of this Elf
 	 * @return
 	 */
-	String getName(){
+	public String getName(){
 		return "Elf " + name;
 	}
 

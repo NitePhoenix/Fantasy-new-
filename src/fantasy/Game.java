@@ -1,7 +1,8 @@
 package fantasy;
 
 /**
- * This class is responsible for constructing levels and coordinating interaction of Charcacters with Rooms
+ * This class is responsible for constructing levels and coordinating interaction of Characters with Rooms
+ * @author S. Camilleri
  * Modified by Leo Hon and Susan Chen
  */
 

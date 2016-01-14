@@ -2,44 +2,45 @@ package fantasy;
 
 /**
  * This class is inherited by different types of characters
- * Modified by Leo Hon and Susan Chen
+ * Modified by Susan Chen
  */
 
 public class Character {
-	String name;
-	int health;
-	int gold;
+	protected String name;
+	protected int health;
+	protected int gold;
 	
 	/**
 	 * Drinking potion restores health
 	 */
-	void drinkPotion(){	
+	public void drinkPotion(){	
 	}
 	
 	/**
 	 * Reduce the health by x%
 	 */
-	void exposeToRadiation(){
+	public void exposeToRadiation(){
 	}
 	
 	/**
 	 * Encountering a ghost
 	 */
-	void findGhost(){
+	public void findGhost(){
 	}
 	
 	/**
 	 * Takes an amount of gold
 	 * @param available (the amount of gold available to be taken)
 	 */
-	int takeGold(int available){
+	public int takeGold(int available){
+		return available;
 	}
 	
 	/**
 	 * The name of the character
 	 * @return name
 	 */
-	String getName(){
+	public String getName(){
 		return name;
 	}
 

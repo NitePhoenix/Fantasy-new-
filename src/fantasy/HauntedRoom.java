@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 
 class HauntedRoom extends Room {
-	boolean ghosts;
+	private boolean ghosts;
 	ArrayList<Character> characters;
 	
 	/**
@@ -24,7 +24,11 @@ class HauntedRoom extends Room {
 		characters = new ArrayList<Character>();
 	}
 	
-	void enter(Character character){
+	/**
+	 * Overrides method in Room in case of ghost encounter
+	 * @param character (the Character)
+	 */
+	public void enter(Character character){
 		if (radioactive)
 			character.exposeToRadiation();
 		

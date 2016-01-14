@@ -2,11 +2,11 @@ package fantasy;
 
 /**
  * This class represents one character of the game
- * Modified by Leo Hon and Susan Chen
+ * Modified by Susan Chen
  */
 
 class Ogre extends Character {
-	final static int maxGold = 0;
+	private final static int maxGold = 0;
 	
 	/**
 	 * Constructs an Ogre
@@ -21,17 +21,21 @@ class Ogre extends Character {
 	/**
 	 * Drinking potion does not restore any health
 	 */
-	void drinkPotion(){		
+	public void drinkPotion(){		
 		health = health+0;
-		System.out.println(getName() + " drinks potion. Health = " + health + "%");
+		System.out.println(getName() + " drinks potion.\n" +
+				"\tHealth restored.\n" +
+				"\tHealth = " + health + "%.");
 	}
 	
 	/**
 	 * Reduce the health by x%
 	 */
-	void exposeToRadiation(){
+	public void exposeToRadiation(){
 		health = (int)(health * 0.95);
-		System.out.println(getName() + " is exposed to radiation. Health = " + health + "%");
+		System.out.println(getName() + " is exposed to radiation.\n" +
+				"\tHealth lost.\n" +
+				"\tHealth = " + health + "%.");
 	}
 	
 	/**
@@ -39,7 +43,7 @@ class Ogre extends Character {
 	 * @param available (the amount of gold available to be taken)
 	 * @return the amount of gold leftover
 	 */
-	int takeGold(int available){
+	public int takeGold(int available){
 		int taken = 0;
 		if (available + gold <= maxGold){
 			gold += available;
@@ -50,22 +54,26 @@ class Ogre extends Character {
 			taken = available - maxGold;
 		}
 		
-		System.out.println(getName() + " takes " + gold + " gold. Gold=" + gold + " bars");
+		System.out.println(getName() + " takes " + gold + " gold.\n" +
+				"\t" + getName() + " does not know what gold is.\n" +
+				"\tGold = " + gold + " bars.");
 		return taken;
 	}
 	
 	/**
 	 * Ghost encounter has no effect
 	 */
-	void findGhost(){
-		System.out.println(getName() + " encounters ghosts. Gold=" + gold + " bars");
+	public void findGhost(){
+		System.out.println(getName() + " encounters ghosts.\n" +
+				"\t" + getName() + " is not affected by ghosts.\n" +
+				"\tGold = " + gold + " bars.");
 	}
 	
 	/**
 	 * A description of this ogre
 	 * @return
 	 */
-	String getName() {
+	public String getName() {
 		return "Ogre " + name;
 	}
 

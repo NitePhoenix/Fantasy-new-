@@ -2,6 +2,12 @@ package fantasy;
 
 import java.util.ArrayList;
 
+/**
+ * This class regulates rooms
+ * @author S. Camilleri
+ * Modified by Leo Hon and Susan Chen
+ */
+
 class Castle {
 	ArrayList<Room> rooms;
 	
@@ -23,7 +29,7 @@ class Castle {
 	 * @param room (the Room)
 	 */
 	void enterRoom(Character character, Room room){
-		System.out.println(character.getName() + " enters the " + room.getName());
+		System.out.println(character.getName() + " enters the " + room.getName() + ".");
 		room.enter(character);
 	}
 	
@@ -35,7 +41,7 @@ class Castle {
 	void exitRoom(Character character, Room room){
 		room.exit(character);
 		
-		System.out.println(character.getName() + " leaves the " + room.getName());
+		System.out.println(character.getName() + " leaves the " + room.getName() + ".");
 		System.out.println();
 	}
 	

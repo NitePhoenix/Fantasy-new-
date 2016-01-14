@@ -4,15 +4,21 @@ import java.util.ArrayList;
 
 /**
  * This class is inherited by different types of rooms
- * Modified by Leo Hon and Susan Chen
+ * Modified by Leo Hon
  */
 
 public class Room {
-	String name;
-	int gold;
-	boolean radioactive;
+	protected String name;
+	protected int gold;
+	protected boolean radioactive;
 	ArrayList<Character> characters;
 	
+	/**
+	 * Constructs a Room
+	 * @param character (the Character)
+	 * @param gold (the amount of gold)
+	 * @param radioactive (if radioactivity is present)
+	 */
 	Room(String name, int gold, boolean radioactive){
 		this.name = name;
 		this.gold = gold;
@@ -20,7 +26,11 @@ public class Room {
 		characters = new ArrayList<Character>();
 	}
 	
-	void enter(Character character){
+	/**
+	 * Methods that are called when a character enters a room
+	 * @param character (the Character)
+	 */
+	public void enter(Character character){
 		characters.add(character);
 		
 		if (radioactive)
@@ -29,11 +39,19 @@ public class Room {
 		gold = character.takeGold(gold);
 	}
 	
-	void exit(Character character){
+	/**
+	 *Methods that are run when a character exits a room
+	 * @param character (the Character)
+	 */
+	public void exit(Character character){
 		characters.remove(character);
 	}
 	
-	String getName(){
+	/**
+	 * The name of the room
+	 * @return name
+	 */
+	public String getName(){
 		return name;
 	}
 

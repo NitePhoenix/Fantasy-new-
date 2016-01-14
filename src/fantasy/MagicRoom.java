@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 
 class MagicRoom extends Room {
-	boolean potion;
+	private boolean potion;
 	ArrayList<Character> characters;
 	
 	/**
@@ -24,7 +24,11 @@ class MagicRoom extends Room {
 		characters = new ArrayList<Character>();
 	}
 	
-	void enter(Character character){
+	/**
+	 * Overrides method in Room in case room has potions
+	 * @param character (the Character)
+	 */
+	public void enter(Character character){
 		if (radioactive)
 			character.exposeToRadiation();
 		

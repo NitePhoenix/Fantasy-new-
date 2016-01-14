@@ -6,7 +6,7 @@ package fantasy;
  */
 
 class Wizard extends Character {
-	final static int maxGold = 20;
+	private final static int maxGold = 20;
 	
 	/**
 	 * Constructs a Wizard
@@ -21,17 +21,21 @@ class Wizard extends Character {
 	/**
 	 * Drinking potion restores health
 	 */
-	void drinkPotion(){		
+	public void drinkPotion(){		
 		health = health*2;
-		System.out.println(getName() + " drinks potion. Health = " + health + "%");
+		System.out.println(getName() + " drinks potion.\n" +
+				"\tHealth restored.\n" +
+				"\tHealth = " + health + "%.");
 	}
 	
 	/**
 	 * Reduce the health by x%
 	 */
-	void exposeToRadiation(){
+	public void exposeToRadiation(){
 		health = (int)(health * 0.75);
-		System.out.println(getName() + " is exposed to radiation. Health = " + health + "%");
+		System.out.println(getName() + " is exposed to radiation.\n" +
+				"\tHealth lost.\n" +
+				"\tHealth = " + health + "%.");
 	}
 	
 	/**
@@ -39,7 +43,7 @@ class Wizard extends Character {
 	 * @param available (the amount of gold available to be taken)
 	 * @return the amount of gold leftover
 	 */
-	int takeGold(int available){
+	public int takeGold(int available){
 		int taken = 0;
 		if (available + gold <= maxGold){
 			gold += available;
@@ -50,22 +54,25 @@ class Wizard extends Character {
 			taken = available - maxGold;
 		}
 		
-		System.out.println(getName() + " takes " + gold + " gold. Gold=" + gold + " bars");	
+		System.out.println(getName() + " takes " + gold + " gold.\n" +
+				"\tGold = " + gold + " bars.");
 		return taken;
 	}
 	
 	/**
 	 * Ghost encounter has no effect
 	 */
-	void findGhost(){
-		System.out.println(getName() + " encounters ghosts. Gold=" + gold + " bars");
+	public void findGhost(){
+		System.out.println(getName() + " encounters ghosts.\n" +
+				"\t" + getName() + " is not affected by ghosts.\n" +
+				"\tGold = " + gold + " bars.");
 	}
 	
 	/**
 	 * A description of this wizard
 	 * @return
 	 */
-	String getName() {
+	public String getName() {
 		return "Wizard " + name;
 	}
 
